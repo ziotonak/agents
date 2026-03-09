@@ -24,8 +24,10 @@ int main(int argc, char **argv) {
     nob_cmd_append(&cmd, SRC_FOLDER "main.c");
     nob_cmd_append(&cmd, VENDOR_FOLDER "sqlite3.c");
     nob_cmd_append(&cmd, VENDOR_FOLDER "sqlite-vec.c");
+    nob_cmd_append(&cmd, VENDOR_FOLDER "cJSON.c");
 
     nob_cmd_append(&cmd, "-lm");
+    nob_cmd_append(&cmd, "-lcurl");
 
     if (!nob_cmd_run_sync(cmd))
         return 1;
